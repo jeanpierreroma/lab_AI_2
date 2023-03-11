@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <title>Lab_2</title>
+</head>
+<body>
+    <h1>Дослідження алгоритму  обчислення нечітких множин</h1>
+    <div class="content">
+        <div class="information">
+            <p class="certificate">Нечіткі множини(НМ) є структурами даних , до яких застосовують спеціальні формули і алгоритми   нечітких обчислень при моделюванні задач ШІ.
+                <br><br>
+                Вхідною інформацією для побудови нечіткої множини (НМ) заданої властивості(вага, ріст, вартість і т.п.) є експертні парні порівняння. Вони  визначають  відношення між елементами  базової множини. Для кожної пари елементів універсальної базової  множини експерт оцінює перевагу одного елемента над іншим стосовно властивості НМ. Парні порівняння подають у формі  матриці
+                <br><br>
+                <img src="/image/matrix.png" alt="Матриця з методички">
+                <br><br>
+                Де  aii - рівень переваги елемента  ui   над   uj  (i, j=1…n), оцінюваний за девятибальною шкалою Сааті. Оцінки рівнів  вибираються з такого списку:
+                <br>
+                1  - якщо відсутня перевага елемента;
+                <br>    
+                3  - якщо існує слабка перевага;
+                <br>    
+                5  - якщо існує істотна перевага;
+                <br>   
+                7  - якщо існує явна перевага;
+                <br>    
+                9  - якщо існує абсолютна перевага;
+
+            </p>
+
+
+        </div>
+        <div class="parent">
+            <div class="choose_variant">
+                <select id = "mySelect" onchange="chooseVariant()">
+                    <option value="" disabled selected>Виберіть варіант</option>
+                    <option value="value1">Швидкість автомобіля</option>
+                    <option value="value2">Зарплата у сфері IT</option>
+                    <option value="value3">Ціна білета в театрі</option>
+                </select>                  
+            </div>
+            <br>
+            <div id="variantTable" class="table">
+                <table id="myTable">
+                    <tr>
+                        <th>Колонка 1</th>
+                        <th>Колонка 2</th>
+                    </tr>
+                </table>
+            </div>
+            <br>
+            <button id="firstButton" onclick="createTable()">Побудувати матрицю</button>
+            <br>
+            <div id="div_for_table" class="table">
+                <table id="myMatrix"></table>
+            </div>
+            <br>
+            <button id="secondButton" onclick="createTable_2()">Вивести всі значення</button>
+            <br>
+            <div class="wholeInfo">
+                <table id="wholeMatrix"></table>
+            </div>
+            <br>
+            <button id="thirdButton" onclick="createGraph()">Побудувати графік</button>
+            <br>
+            <div id="graphh" class="graph"></div>
+            <br>
+            <button id="fourthButton" onclick="location.reload()">Спочатку</button>
+        </div>
+    </div>
+    <script src="consolTest.js"></script>
+</body>
+</html>
